@@ -1,13 +1,15 @@
 name: Backend CI Pipeline (Spring Boot Maven)
 
-# 1. 언제 실행할지 정의: main 브랜치에 코드가 푸시되거나, Pull Request가 발생했을 때
+# 1. 언제 실행할지 정의: main 또는 master 브랜치에 코드가 푸시되거나, Pull Request가 발생했을 때
 on:
   push:
     branches:
       - main
+      - master # master 브랜치 추가
   pull_request:
     branches:
       - main
+      - master # master 브랜치 추가
 
 # 2. 파이프라인을 실행할 Job 목록
 jobs:
@@ -20,7 +22,7 @@ jobs:
       # 1. 코드 체크아웃
       - name: Checkout Code
         uses: actions/checkout@v4
-
+        
       # 2. Java 환경 설정
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -28,7 +30,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           # Maven이 사용할 캐시를 설정하여 종속성 다운로드 시간을 줄입니다.
-          cache: 'maven'
+          cache: 'maven' 
 
       # 3. 단위 테스트 실행 및 코드 빌드
       # mvn package는 테스트를 포함하여 실행합니다.
@@ -40,7 +42,6 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # 5. Docker 이미지 빌드
-      # 실제 레지스트리(Docker Hub, ECR)에 푸시하지 않고, 빌드만 수행하여 검증합니다.
       - name: Build Docker Image (Local Test)
         uses: docker/build-push-action@v5
         with:
@@ -48,10 +49,8 @@ jobs:
           file: ./Dockerfile  # Step 1에서 작성한 Dockerfile 경로
           tags: my-backend-app:latest
           push: false # 레지스트리에 푸시하지 않고 로컬에서 빌드만 수행
-          # CI 단계에서는 이미지 생성이 성공하는지 여부만 검증하는 것이 목적입니다.
-
+          
       # 6. (선택적) 빌드 아티팩트 저장
-      # 다음 CD 단계에서 사용할 JAR 파일 등을 저장소에 아티팩트로 저장할 수 있습니다.
       - name: Save Application Artifact (JAR)
         uses: actions/upload-artifact@v4
         with:
