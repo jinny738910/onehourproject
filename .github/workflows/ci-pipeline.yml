@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - master # master 브랜치 추가
+      
   pull_request:
     branches:
       - main
