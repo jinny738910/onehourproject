@@ -43,7 +43,6 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
 # 1단계: 빌드 스테이지 (BUILDER)
 # Maven과 JDK가 모두 포함된 환경을 사용하여 빌드합니다.
 # ----------------------------------------------------
-FROM maven:3.8.7-eclipse-temurin-17 AS builder
 
 # 작업 디렉토리 설정
 WORKDIR /app
