@@ -104,8 +104,8 @@ jobs:
       - name: Deploy to AWS ECS (Staging)
         env:
           IMAGE_TAG: ${{ secrets.DOCKER_USERNAME }}/my-backend-app:${{ github.sha }}
-          ECS_CLUSTER_NAME: 'your-ecs-cluster' # 실제 ECS 클러스터 이름으로 변경 필요
-          ECS_SERVICE_NAME: 'your-ecs-service' # 실제 ECS 서비스 이름으로 변경 필요
+          ECS_CLUSTER_NAME: 'homely-koala-uwyuvu' # 실제 ECS 클러스터 이름으로 변경 필요
+          ECS_SERVICE_NAME: 'backend-staging-task-service-c33if6tc' # 실제 ECS 서비스 이름으로 변경 필요
         run: |
           echo "Starting deployment to AWS ECS Service: $ECS_SERVICE_NAME"
           
