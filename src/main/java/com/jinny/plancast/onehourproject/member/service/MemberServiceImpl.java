@@ -1,6 +1,7 @@
-package com.jinny.plancast.onehourproject.member.servicce;
+package com.jinny.plancast.onehourproject.member.service;
 
 
+import com.jinny.plancast.onehourproject.member.controller.dto.JoinRequest;
 import com.jinny.plancast.onehourproject.member.repository.MemberRepository;
 import com.jinny.plancast.onehourproject.member.repository.entity.Member;
 import lombok.RequiredArgsConstructor;
@@ -13,11 +14,11 @@ public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
     @Override
-    public String join(String id, String name, String phoneNumber) {
+    public String join(JoinRequest joinRequest) {
         Member member = Member.builder()
-                .id(id)
-                .name(name)
-                .phoneNumber(phoneNumber)
+                .id(joinRequest.getId())
+                .name(joinRequest.getName())
+                .phoneNumber(joinRequest.getPhoneNumber())
                 .build();
         memberRepository.save(member);
 

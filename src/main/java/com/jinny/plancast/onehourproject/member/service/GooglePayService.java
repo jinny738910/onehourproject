@@ -1,8 +1,13 @@
 package com.jinny.plancast.onehourproject.member.service;
 
-import com.jinny.plancast.onehourproject.member.controller.dto.JoinRequest;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 
-public interface MemberService {
+public interface GooglePayService {
 
-    String join(JoinRequest joinRequest);
+//    void init() throws GeneralSecurityException, IOException;
+//    String removePemHeaders(String key);
+//    String decryptAndVerifyToken(String encryptedToken) throws GeneralSecurityException;
+//    boolean processPayment(String decryptedPayloadJson, double amount, String currency);
+
 }

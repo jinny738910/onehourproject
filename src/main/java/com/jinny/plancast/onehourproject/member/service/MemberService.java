@@ -1,6 +1,8 @@
-package com.jinny.plancast.onehourproject.member.servicce;
+package com.jinny.plancast.onehourproject.member.service;
+
+import com.jinny.plancast.onehourproject.member.controller.dto.JoinRequest;
 
 public interface MemberService {
 
-    String join(String id, String name, String phoneNumber);
+    String join(JoinRequest joinRequest);
 }

@@ -1,4 +1,11 @@
 package com.jinny.plancast.onehourproject.member.controller.dto;
 
-public class joinRequest {
+import lombok.Data;
+
+@Data
+public class JoinRequest {
+
+    private String id;
+    private String name;
+    private String phoneNumber;
 }

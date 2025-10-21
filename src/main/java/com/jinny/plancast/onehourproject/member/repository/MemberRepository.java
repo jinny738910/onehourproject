@@ -1,4 +1,8 @@
-package com.jinny.plancast.onehourproject.user.repository;
+package com.jinny.plancast.onehourproject.member.repository;
 
-public interface UserRepository {
+import com.jinny.plancast.onehourproject.member.repository.entity.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MemberRepository extends JpaRepository<Member, Long> {
+
 }
