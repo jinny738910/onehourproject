@@ -1,4 +1,4 @@
-package com.jinny.plancast.onehourproject.member.service;
+package com.jinny.plancast.onehourproject.member.service.product;
 
 import com.jinny.plancast.onehourproject.member.repository.ProductRepository;
 import com.jinny.plancast.onehourproject.member.repository.entity.Product;
@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor // Lombok을 사용하여 final 필드의 생성자 주입
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 

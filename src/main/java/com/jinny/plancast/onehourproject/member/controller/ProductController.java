@@ -1,7 +1,7 @@
 package com.jinny.plancast.onehourproject.member.controller;
 
 import com.jinny.plancast.onehourproject.member.repository.entity.Product;
-import com.jinny.plancast.onehourproject.member.service.ProductService;
+import com.jinny.plancast.onehourproject.member.service.product.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
 
-    private final ProductService productService;
+    private final ProductServiceImpl productService;
 
     // C: 상품 생성 (POST /api/products)
     @PostMapping

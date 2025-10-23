@@ -1,7 +1,7 @@
 package com.jinny.plancast.onehourproject.member.controller;
 
 import com.jinny.plancast.onehourproject.member.controller.dto.JoinRequest;
-import com.jinny.plancast.onehourproject.member.service.MemberService;
+import com.jinny.plancast.onehourproject.member.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

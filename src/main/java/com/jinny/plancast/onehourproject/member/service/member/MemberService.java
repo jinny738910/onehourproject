@@ -1,4 +1,4 @@
-package com.jinny.plancast.onehourproject.member.service;
+package com.jinny.plancast.onehourproject.member.service.member;
 
 import com.jinny.plancast.onehourproject.member.controller.dto.JoinRequest;
 

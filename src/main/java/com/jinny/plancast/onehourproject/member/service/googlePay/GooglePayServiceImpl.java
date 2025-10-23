@@ -1,24 +1,6 @@
-package com.jinny.plancast.onehourproject.member.service;
+package com.jinny.plancast.onehourproject.member.service.googlePay;
 
-import com.google.crypto.tink.aead.AeadConfig;
-import com.google.crypto.tink.apps.paymentmethodtoken.PaymentMethodTokenRecipient;
-import com.google.crypto.tink.apps.paymentmethodtoken.GooglePaymentsPublicKeysManager;
-import com.google.gson.Gson;
-import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.security.GeneralSecurityException;
-import java.security.KeyFactory;
-import java.security.PrivateKey;
-import java.security.interfaces.ECPrivateKey;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.Base64;
 
 @Service
 public class GooglePayServiceImpl implements GooglePayService {

@@ -1,7 +1,4 @@
-package com.jinny.plancast.onehourproject.member.service;
-
-import java.io.IOException;
-import java.security.GeneralSecurityException;
+package com.jinny.plancast.onehourproject.member.service.googlePay;
 
 public interface GooglePayService {
 
