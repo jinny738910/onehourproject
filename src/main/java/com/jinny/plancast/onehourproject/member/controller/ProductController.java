@@ -19,7 +19,7 @@ public class ProductController {
     // C: 상품 생성 (POST /api/products)
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        Product savedProduct = productService.saveProduct(product);
+        Product savedProduct = productService.saveProduct(product.getId() ,product);
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     }
 
